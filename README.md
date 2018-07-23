@@ -56,7 +56,14 @@ A camel exercises for EX421 - Preparando el Ex421
 > Pero primero unas reglas antes de iniciar con los ejercicios.
     Propongase a construir una rama nueva y haga los ejercicios porque copiando y pegando no se aprende.
 
-- [ ] 
+>Use for file the `noop=true` option and don't make any change over the `master branch`.
+
+- [ ] JPA: You will Take a files from a directory eg, `in/` and later send it to a data base, in the process you may consider the exceptions and the Test Unit.
+- [ ] CBR: Exec a class method from the Route.
+- [ ] Aggregation estrategy: 
+- [ ] File: marshall CSV to CLASS
+- [ ] Multipart:
+
 
 
 
