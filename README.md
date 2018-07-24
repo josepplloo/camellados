@@ -48,7 +48,7 @@ A camel exercises for EX421 - Preparando el Ex421
 - Catch and handle exceptions
 - Use the dead-letter queue
 
-# In this repo propose the folow execices:
+# This repo propose the folow execices:
     
     Clone this repo and please do your own branch.
     No mathers what happen never post the solutions on the master for make this repo clean
