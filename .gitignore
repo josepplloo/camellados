@@ -10,6 +10,19 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
+# IDE stuft
+.recommenders/
+.fdt
+.fdx
+.fnm
+.frq
+.nrm
+.prx
+.tii
+.tis
+.gen
+.lock
+
 # Package Files #
 *.jar
 *.war
