@@ -1,5 +1,6 @@
 # camellados :camel:
 A camel exercises for EX421 - Preparando el Ex421 
+made whit :camel: 2.18.1.redhat-000021 and JBoss Developer Studio 11.2
 
 ## Candidates for the Red Hat Certified Specialist in Camel Development exam should be able to:
 
