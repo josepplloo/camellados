@@ -11,6 +11,7 @@
 .mtj.tmp/
 
 # IDE stuft
+*RemoteSystemsTempFiles/
 .recommenders/
 .fdt
 .fdx
