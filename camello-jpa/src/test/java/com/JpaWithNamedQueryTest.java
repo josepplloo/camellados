@@ -28,7 +28,7 @@ public class JpaWithNamedQueryTest {
         
         event = new Event();
         event.setCreatedOn(new Date());
-        event.setEvent_Name("Pepito");
+        event.setName("Pepito");
         
         session.getTransaction().begin();
         

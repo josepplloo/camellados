@@ -11,8 +11,8 @@
   <property generated="never" lazy="false" name="createdOn" type="java.util.Date">
    <column name="CREATEDON"/>
   </property>
-  <property generated="never" lazy="false" name="Event_Name" type="java.lang.String">
-   <column name="EVENT_NAME"/>
+  <property generated="never" lazy="false" name="Name" type="java.lang.String">
+   <column name="NAME"/>
   </property>
  </class>
 </hibernate-mapping>

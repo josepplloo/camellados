@@ -29,8 +29,8 @@ public class Event implements Serializable{
     private Date createdOn;
     
 	@DataField(pos = 3)
-    @Column(name = "Event_Name")
-    private String Event_Name;
+    @Column(name = "Name")
+    private String Name;
 
 
     public Long getId() {
@@ -41,12 +41,12 @@ public class Event implements Serializable{
         return createdOn;
     }
 
-	public String getEvent_Name() {
-		return Event_Name;
+	public String getName() {
+		return Name;
 	}
 
-	public void setEvent_Name(String event_Name) {
-		Event_Name = event_Name;
+	public void setName(String event_Name) {
+		this.Name = event_Name;
 	}
 
 	public void setId(Long id) {

@@ -12,8 +12,9 @@ public class Ruta extends RouteBuilder{
 		from("file:in?noop=true")
 		.unmarshal(bindycsvformat)
 		.split(body())
-		.log(LoggingLevel.INFO, "${body}")
-		.to("jpa:"+Event.class.getName()+"?persistenceUnit=templatePU");
+		.log(LoggingLevel.INFO, "Process Event-> ${body.id}")
+		.to("jpa:"+Event.class.getName()+"?persistenceUnit=templatePU")
+		.log(LoggingLevel.INFO, "Inserted new Event ${body.id}");
 		
 	}
 
