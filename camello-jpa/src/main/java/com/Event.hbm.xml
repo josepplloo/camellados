@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated Jul 24, 2018 8:24:50 PM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.Event" table="EVENT">
-        <id name="id" type="java.lang.Long">
-            <column name="ID" />
-            <generator class="assigned" />
-        </id>
-        <property name="createdOn" type="java.util.Date">
-            <column name="CREATEDON" />
-        </property>
-        <property name="Event_Name" type="java.lang.String">
-            <column name="EVENT_NAME" />
-        </property>
-    </class>
+ <class name="com.Event" table="EVENT">
+  <id name="id" type="java.lang.Long">
+   <column name="ID"/>
+   <generator class="assigned"/>
+  </id>
+  <property generated="never" lazy="false" name="createdOn" type="java.util.Date">
+   <column name="CREATEDON"/>
+  </property>
+  <property generated="never" lazy="false" name="Event_Name" type="java.lang.String">
+   <column name="EVENT_NAME"/>
+  </property>
+ </class>
 </hibernate-mapping>
