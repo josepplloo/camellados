@@ -1,5 +1,7 @@
 package com;
+// asserts that all the mock objects involved in this test are happy
 
+import org.apache.camel.CamelExecutionException;
 import org.apache.camel.Exchange;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.mock.MockEndpoint;
@@ -43,8 +45,20 @@ public class CBRTest extends CamelTestSupport {
 
         template.sendBody("direct:start", "Hello World");
 
-        // asserts that all the mock objects involved in this test are happy
         assertMockEndpointsSatisfied();
     }
+	
+	@Test
+	public void testOnException() throws Exception{		
+	
+        boolean consumerStopped = false;
+        try {
+            template.sendBody("direct:start", "ERROR");
+        } catch (CamelExecutionException e) {
+            consumerStopped = true;
+        }    
+        assertTrue(consumerStopped);
+
+	}
 	
 }

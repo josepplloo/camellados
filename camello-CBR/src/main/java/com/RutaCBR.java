@@ -4,10 +4,18 @@ import org.apache.camel.LoggingLevel;
 import org.apache.camel.builder.RouteBuilder;
 
 public class RutaCBR extends RouteBuilder{
+	
+	MyStopPolicy policy =new MyStopPolicy();
+	
+	
 
 	@Override
 	public void configure() throws Exception {
-		from("direct:start")
+		
+		
+		
+		
+		from("direct:start").routeId("rutacbr")
 		.choice()
 		.when(body().contains("Camel"))
 		.setHeader("verified", simple("true"))
@@ -15,7 +23,14 @@ public class RutaCBR extends RouteBuilder{
 		.when(body().contains("Hello"))
 		.to("mock:other")
 		.otherwise()
-		.log(LoggingLevel.WARN, "No assert whit message ${body}");
+		.to("direct:error");
+		
+		
+		from("direct:error")
+		.routePolicy(policy)
+		.log(LoggingLevel.WARN, "No assert whit message ${body}")
+		.to("mock:error");
+
 	}
 
 }
