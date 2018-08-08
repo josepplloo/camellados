@@ -1,5 +1,8 @@
 Camel Project for Blueprint 
-=========================================
+===========================
+
+### Tip
+    See the tests!
 
 To build this project use
 
