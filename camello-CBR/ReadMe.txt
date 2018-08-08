@@ -19,6 +19,13 @@ For more help see the Apache Camel documentation
     http://camel.apache.org/
 
 Consider the folow code to make a class:
+
+import org.apache.camel.Exchange;
+import org.apache.camel.builder.RouteBuilder;
+import org.apache.camel.component.mock.MockEndpoint;
+import org.apache.camel.test.junit4.CamelTestSupport;
+import org.junit.Test;
+
 public class CBRTest extends CamelTestSupport {
 	
 	@Override
