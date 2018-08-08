@@ -66,5 +66,18 @@ public class CBRTest extends CamelTestSupport {
         // asserts that all the mock objects involved in this test are happy
         assertMockEndpointsSatisfied();
     }
+    
+    @Test
+	public void testOnException() throws Exception{		
+	
+        boolean consumerStopped = false;
+        try {
+            template.sendBody("direct:start", "ERROR");
+        } catch (CamelExecutionException e) {
+            consumerStopped = true;
+        }    
+        assertTrue(consumerStopped);
+
+	}
 	
 }
