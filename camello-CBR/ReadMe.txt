@@ -1,25 +1,10 @@
-Camel Project for Blueprint 
+# Camel Project for Blueprint 
 =========================================
 
-To build this project use
 
-    mvn install
-
-To run the project you can execute the following Maven goal
-
-    mvn camel:run
-
-To deploy the project in OSGi. For example using Apache Karaf.
-You can run the following command from its shell:
-
-    osgi:install -s mvn:com.mycompany/camel-blueprint/1.0.0-SNAPSHOT
-
-For more help see the Apache Camel documentation
-
-    http://camel.apache.org/
 
 Consider the folow code to make a class:
-
+```java
 import org.apache.camel.Exchange;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.mock.MockEndpoint;
@@ -81,3 +66,6 @@ public class CBRTest extends CamelTestSupport {
 	}
 	
 }
+```
+
+This examples are taken from this [git-repo](https://github.com/apache/camel/blob/master/components/camel-quartz/src/test/java/org/apache/camel/routepolicy/quartz/SimpleScheduledRoutePolicyTest.java)
