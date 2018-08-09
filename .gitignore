@@ -23,6 +23,7 @@
 .tis
 .gen
 .lock
+*.settings/*
 
 # Package Files #
 *.jar
