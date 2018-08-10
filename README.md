@@ -49,6 +49,7 @@ made whit :camel: 2.18.1.redhat-000021 and JBoss Developer Studio 11.2
 - Catch and handle exceptions
 - Use the dead-letter queue
 
+>In the Exam you should be able to read the [Documentation](https://access.redhat.com/documentation/en-us/red_hat_fuse/7.0/html/apache_camel_development_guide/)
 # This repo propose the folow execices:
     
     Clone this repo and please do your own branch.
