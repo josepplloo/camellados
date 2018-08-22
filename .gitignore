@@ -24,7 +24,7 @@
 .gen
 .lock
 *.settings/*
-
+.settings/*
 # Package Files #
 *.jar
 *.war
