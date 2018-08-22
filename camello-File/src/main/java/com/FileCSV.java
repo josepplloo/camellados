@@ -1,6 +1,6 @@
 package com;
 
-public class FileCSV {
+public abstract class FileCSV {
 	
 	
 
