@@ -14,6 +14,13 @@ public class LaRutaCSV2Class extends RouteBuilder{
 		from("file:in?noop=true")
 		.unmarshal(hicsv)
 		.log(LoggingLevel.INFO, "-----> ${body}");
+		
+		/*
+		 * we can define a second route for process the 
+		 * file and generate a bean or an error
+		 * fix cv
+		*/
+		
 	}
 
 }
