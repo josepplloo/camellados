@@ -3,11 +3,17 @@ package com;
 import java.io.File;
 
 import org.apache.camel.Exchange;
+import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.mock.MockEndpoint;
 import org.apache.camel.test.junit4.CamelTestSupport;
 import org.junit.Test;
 
 public class CreationofFilesTest extends CamelTestSupport {
+	
+	@Override
+	protected RouteBuilder createRouteBuilder() throws Exception {
+		return new LaRutaCSV2Class();
+	} 
 	
 	@Test
 	public void testCSV() throws Exception {
@@ -21,8 +27,12 @@ public class CreationofFilesTest extends CamelTestSupport {
 	}
 	@Test
 	public void testCSVcontent() throws Exception {
-		MockEndpoint contentEndpoint = (MockEndpoint) context.getEndpoint("mock:contentEndpoint");
-		assertTrue(contentEndpoint.message(0).toString().contains(","));
+        
+		MockEndpoint contentEndpoint = getMockEndpoint("mock:contentEndpoint");
+		contentEndpoint.expectedMessageCount(0);
+		
+		template.sendBody("direct:contentEndpoint", "Hello World whitout comma");
+		assertMockEndpointsSatisfied();
 	}
 
 }
