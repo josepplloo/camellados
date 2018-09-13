@@ -18,10 +18,12 @@ For more help see the Apache Camel documentation
 
     http://camel.apache.org/
     
-<aside class="notice">
+---
+
+~~
 Consider change the name whit a refactoring to camello-RecipientList
 and consider the follow code snipet:
-</aside>
+~~
 
 
 ```java
