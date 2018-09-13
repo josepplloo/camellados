@@ -57,6 +57,10 @@ public class RecipientListTest extends CamelTestSupport {
 	
 	@Test
 	public void testDiferentsRLs() throws Exception{
+	        String textXml = "<?xml version='1.0' encoding='UTF-8'?><estudiante><nombres>Fredis David</nombres><apellidos>Vergara Giraldo</apellidos><curso>Desarrollo web</curso><calificacion1>3.0</calificacion1><calificacion2>2.4</calificacion2><calificacion3>3.9</calificacion3></estudiante>";
+		Thread.sleep(2000);
+		template.sendBody("direct:filexml", textXml);
+	
 		MockEndpoint mockLoser  = getMockEndpoint("mock:loser");
 		mockLoser.expectedMessageCount(0);
 		assertMockEndpointsSatisfied();
