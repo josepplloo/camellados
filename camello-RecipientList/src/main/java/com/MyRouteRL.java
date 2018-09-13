@@ -7,6 +7,7 @@ import org.apache.camel.LoggingLevel;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.converter.jaxb.JaxbDataFormat;
 
+
 public class MyRouteRL extends RouteBuilder {
 
 	@Override
@@ -17,9 +18,12 @@ public class MyRouteRL extends RouteBuilder {
 				
 		from("direct://filexml")
 		.unmarshal(xmlDataFormat)
-		.log(LoggingLevel.INFO, "------------> ${body.promedio} \n  ")
+		.setHeader("promedio",simple("${body.promedio}"))
+		.log(LoggingLevel.INFO, "------------> ${header.promedio} \n  ")
 		.to("velocity:studentTemplate.vm")
-		.to("mock:velocity");
+		.to("mock:velocity")
+		.unmarshal(xmlDataFormat)
+		.bean(MessageRouter.class, "routeTo");
 	}
 
 }

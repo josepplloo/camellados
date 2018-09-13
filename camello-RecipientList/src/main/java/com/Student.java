@@ -3,17 +3,18 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
+
 @XmlRootElement(name = "estudiante")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Student {
 	
-	private String nombres;
-	private String apellidos;
-	private String curso;
-	private String calificacion1;
-	private String calificacion2;
-	private String calificacion3;
-	private String promedio;
+	String nombres;
+	String apellidos;
+	String curso;
+	String calificacion1;
+	String calificacion2;
+	String calificacion3;
+	String promedio;
 	
 	
 	public String getNombres() {
@@ -62,6 +63,7 @@ public class Student {
 	public void setPromedio(String promedio) {
 		this.promedio = promedio;
 	}
+	
 	
 	
 	
