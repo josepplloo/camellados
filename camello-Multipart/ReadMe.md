@@ -18,8 +18,11 @@ For more help see the Apache Camel documentation
 
     http://camel.apache.org/
     
+<aside class="notice">
 Consider change the name whit a refactoring to camello-RecipientList
 and consider the follow code snipet:
+</aside>
+
 
 ```java
 
@@ -50,6 +53,18 @@ public class RecipientListTest extends CamelTestSupport {
 		
 		Exchange exchange = mockVelocity.assertExchangeReceived(0);
 		assertEquals("<?xml version='1.0' encoding='UTF-8'?><estudiante><nombres>Fredis David</nombres><apellidos>Vergara Giraldo</apellidos><mensaje>Desarrollo web</mensaje><curso>Aprobado</curso><comentario>XXX</comentario></estudiante>", exchange.getIn().getBody());
+	}
+	
+	@Test
+	public void testDiferentsRLs() throws Exception{
+		MockEndpoint mockLoser  = getMockEndpoint("mock:loser");
+		mockLoser.expectedMessageCount(0);
+		assertMockEndpointsSatisfied();
+		
+		MockEndpoint mockWinner  = getMockEndpoint("mock:winner");
+		mockWinner.expectedMessageCount(1);
+		assertMockEndpointsSatisfied();
+		
 	}
 }
 ```
