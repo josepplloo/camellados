@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Artists>
+#foreach( $b in $body )
+<artist genre='${headers.genero}'>
+ <name>${b.name}</name>
+ <album>${b.album1}</album>
+ <album>${b.album2}</album>
+ <album>${b.album3}</album>
+</artist>   
+#end  
+<Artists>
+

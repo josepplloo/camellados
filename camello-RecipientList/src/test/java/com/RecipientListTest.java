@@ -43,4 +43,6 @@ public class RecipientListTest extends CamelTestSupport {
 		assertMockEndpointsSatisfied();
 		
 	}
+	
+	
 }
