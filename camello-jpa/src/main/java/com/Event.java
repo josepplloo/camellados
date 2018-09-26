@@ -7,9 +7,17 @@ import javax.persistence.*;
 
 import org.apache.camel.dataformat.bindy.annotation.CsvRecord;
 import org.apache.camel.dataformat.bindy.annotation.DataField;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+
 
 @Entity
 @Table(name="event")
+@NamedQueries({
+	@NamedQuery(name = "event.findall", query = "SELECT x FROM Event x"),
+    @NamedQuery(name = "event.findById", query = "SELECT s FROM Event s WHERE s.id = :id")
+
+})
 @CsvRecord(separator = ",", skipFirstLine = true, crlf="MAC")
 public class Event implements Serializable{
 

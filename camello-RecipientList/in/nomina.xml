@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nomina>
+	<empleados>
+		<empleado>
+			<nombres>Fredis David</nombres>
+			<apellidos>Vergara Giraldo</apellidos>
+			<correo>correo1@correo.com</correo>
+			<documento>123456</documento>
+			<aportes>
+				<salud>50000</salud>
+				<pension>50000</pension>
+			</aportes>
+			<subtotal>800000</subtotal>
+			<total>700000</total>
+		</empleado>
+		<empleado>
+			<nombres>Pepito</nombres>
+			<apellidos>Garcia</apellidos>
+			<correo>correo2@correo.com</correo>
+			<documento>246810</documento>
+			<aportes>
+				<salud>50000</salud>
+				<pension>50000</pension>
+			</aportes>
+			<subtotal>800000</subtotal>
+			<total>700000</total>
+		</empleado>
+	</empleados>
+</nomina>

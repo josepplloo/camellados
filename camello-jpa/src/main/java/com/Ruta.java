@@ -15,7 +15,21 @@ public class Ruta extends RouteBuilder{
 		.log(LoggingLevel.INFO, "Process Event-> ${body.id}")
 		.to("jpa:"+Event.class.getName()+"?persistenceUnit=templatePU")
 		.log(LoggingLevel.INFO, "Inserted new Event ${body.id}");
+	
+		from("direct:csv")
+		.unmarshal(bindycsvformat)
+		.split(body())
+		.to("jpa:event?persistenceUnit=templatePU")
+		.to("mock:jpa");
 		
+		from("jpa:event?consumer.namedQuery=event.findall&persistenceUnit=templatePU")
+		.log(LoggingLevel.INFO, ">>>>>>>>>>>>>>>>>>>>>> ${body}")
+
+		.split(body())
+		.marshal(bindycsvformat)
+		.log(LoggingLevel.INFO, "----> ${body}")
+		.to("mock:marshal");
 	}
 
+	
 }
